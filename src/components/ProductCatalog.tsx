@@ -1,6 +1,7 @@
 
 import { useState, useEffect } from 'react';
 import { Filter } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 // Mock product data
 const products = [
@@ -8,7 +9,7 @@ const products = [
     id: 1,
     name: 'Urban Oversized Tee',
     price: 49.99,
-    image: 'https://images.unsplash.com/photo-1566374010196-e78515e6d270?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80',
+    image: 'https://images.unsplash.com/photo-1566374010196-e78515e6a34a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80',
     category: 'T-Shirts',
     isNew: true,
   },
@@ -142,7 +143,7 @@ const ProductCatalog = () => {
         <div className="product-grid">
           {filteredProducts.map((product) => (
             <div key={product.id} className="product-card">
-              <div className="product-image-container">
+              <Link to={`/product/${product.id}`} className="product-image-container">
                 <img
                   src={product.image}
                   alt={product.name}
@@ -154,15 +155,17 @@ const ProductCatalog = () => {
                   </div>
                 )}
                 <div className="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <button className="button-primary w-full">Add to Cart</button>
+                  <button className="button-primary w-full">Ver detalhes</button>
                 </div>
-              </div>
+              </Link>
               <div className="p-4">
-                <h3 className="text-lg font-medium">{product.name}</h3>
-                <div className="flex items-center justify-between mt-2">
-                  <span className="text-lg font-semibold">${product.price}</span>
-                  <span className="text-sm text-white/60">{product.category}</span>
-                </div>
+                <Link to={`/product/${product.id}`}>
+                  <h3 className="text-lg font-medium">{product.name}</h3>
+                  <div className="flex items-center justify-between mt-2">
+                    <span className="text-lg font-semibold">${product.price}</span>
+                    <span className="text-sm text-white/60">{product.category}</span>
+                  </div>
+                </Link>
               </div>
             </div>
           ))}
