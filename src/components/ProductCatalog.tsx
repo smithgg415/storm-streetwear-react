@@ -1,14 +1,19 @@
 
 import { useState, useEffect } from 'react';
 import { Filter, ShoppingBag } from 'lucide-react';
+import GraffitOrb from '../assets/img/graffitorb.png';
+import GraffitThree from '../assets/img/graffitthree.png';
+import GraffitThreeWhite from '../assets/img/graffitthreewhite.png';
+import GraffitDash from '../assets/img/graffitdash.png';
+import GraffitBlastWhite from '../assets/img/graffitdashwhite.png';
+import GraffitBlast from '../assets/img/graffitblast.png';
 
-// Mock product data
 const products = [
   {
     id: 1,
     name: 'Camiseta Storm Graffit Orb',
     price: 85.90,
-    image: '/img/graffitorb.png',
+    image: GraffitOrb,
     category: 'T-Shirts',
     isNew: true,
     link: 'https://lusfernandomachadorodrigue.mercadoshops.com.br/MLB-5325793538-camiseta-storm-graffit-orb-_JM',
@@ -18,7 +23,7 @@ const products = [
     id: 2,
     name: 'Camiseta Storm Graffit Three',
     price: 85.90,
-    image: '/img/graffitthree.png',
+    image: GraffitThree,
     category: 'T-Shirts',
     isNew: true,
     link: 'https://lusfernandomachadorodrigue.mercadoshops.com.br/MLB-5329174134-camiseta-storm-graffit-three-_JM',
@@ -28,7 +33,7 @@ const products = [
     id: 3,
     name: 'Camiseta Storm Graffit Three White',
     price: 85.90,
-    image: '/img/graffitthreewhite.png',
+    image: GraffitThreeWhite,
     category: 'T-Shirts',
     isNew: true,
     link: 'https://lusfernandomachadorodrigue.mercadoshops.com.br/MLB-5329174134-camiseta-storm-graffit-three-_JM',
@@ -38,7 +43,7 @@ const products = [
     id: 4,
     name: 'Camiseta Storm Graffit Blast',
     price: 85.90,
-    image: '/img/graffitblast.png',
+    image: GraffitBlast,
     category: 'T-Shirts',
     isNew: true,
     link: 'https://lusfernandomachadorodrigue.mercadoshops.com.br/MLB-5329313694-camiseta-storm-graffit-blast-_JM',
@@ -48,17 +53,18 @@ const products = [
     id: 5,
     name: 'Camiseta Storm Graffit Dash',
     price: 85.90,
-    image: '/img/graffitdash.png',
+    image: GraffitDash,
     category: 'T-Shirts',
     isNew: true,
     link: 'https://produto.mercadolivre.com.br/MLB-4013125147-camiseta-storm-graffit-dash-_JM',
     tamanhos: ['GG'],
   },
+
   {
     id: 6,
     name: 'Camiseta Storm Graffit Dash White',
     price: 85.90,
-    image: '/img/graffitdashwhite.png',
+    image: GraffitBlastWhite,
     category: 'T-Shirts',
     isNew: true,
     link: 'https://produto.mercadolivre.com.br/MLB-4013125147-camiseta-storm-graffit-dash-_JM',
@@ -66,7 +72,7 @@ const products = [
   },
 ];
 
-const categories = ["All", "T-Shirts"];
+const categories = ["T-Shirts"];
 
 const ProductCatalog = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -86,18 +92,17 @@ const ProductCatalog = () => {
       <div className="container mx-auto">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-12">
           <h2 className="catalog-heading">Compre nossos produtos</h2>
-          
+
           <div className="mt-6 md:mt-0">
-            {/* Mobile filter button */}
             <div className="md:hidden">
-              <button 
+              <button
                 className="flex items-center space-x-2 border border-white/20 px-4 py-2"
                 onClick={() => setIsFilterMenuOpen(!isFilterMenuOpen)}
               >
                 <Filter size={16} />
                 <span>Filter: {selectedCategory}</span>
               </button>
-              
+
               {isFilterMenuOpen && (
                 <div className="absolute z-20 mt-2 bg-black border border-white/20 w-48">
                   {categories.map((category, index) => (
@@ -115,17 +120,15 @@ const ProductCatalog = () => {
                 </div>
               )}
             </div>
-            
-            {/* Desktop category tabs */}
+
             <div className="hidden md:flex space-x-4">
               {categories.map((category, index) => (
                 <button
                   key={index}
-                  className={`px-4 py-2 text-sm transition-colors ${
-                    selectedCategory === category
-                      ? 'text-white border-b-2 border-white'
-                      : 'text-white/60 hover:text-white'
-                  }`}
+                  className={`px-4 py-2 text-sm transition-colors ${selectedCategory === category
+                    ? 'text-white border-b-2 border-white'
+                    : 'text-white/60 hover:text-white'
+                    }`}
                   onClick={() => setSelectedCategory(category)}
                 >
                   {category}
@@ -135,7 +138,7 @@ const ProductCatalog = () => {
           </div>
         </div>
 
-        <div className="product-grid">
+        <div className="product-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredProducts.map((product) => (
             <div key={product.id} className="product-card">
               <div className="product-image-container">
@@ -149,37 +152,20 @@ const ProductCatalog = () => {
                     NEW
                   </div>
                 )}
-                <div className="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <button 
-                    onClick={() => window.open(product.link, '_blank')}
-                    className="button-primary w-full flex items-center justify-center gap-2"
-                  >
-                    <ShoppingBag size={16} />
-                    Comprar
-                  </button>
-                </div>
               </div>
               <div className="p-4">
                 <h3 className="text-lg font-medium">{product.name}</h3>
                 <div className="flex items-center justify-between mt-2">
-                  <span className="text-lg font-semibold">R${product.price.toFixed(2)}</span>
-                  <span className="text-sm text-white/60">Tamanho: {product.tamanhos.join(', ')}</span>
+                  <span className="text-lg font-semibold">R${product.price}</span>
+                  <span className="text-sm text-white/60">Disponível no tamanho: {product.tamanhos}</span>
                 </div>
+                <button className="button-primary mt-4 w-full flex items-center justify-center gap-2" onClick={() => window.open(product.link, '_blank')}>
+                  <ShoppingBag size={16} />
+                  Comprar
+                </button>
               </div>
             </div>
           ))}
-        </div>
-        
-        <div className="mt-12 text-center">
-          <a 
-            href="https://lusfernandomachadorodrigue.mercadoshops.com.br" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="button-outline flex items-center justify-center gap-2 mx-auto w-fit"
-          >
-            <ShoppingBag size={18} />
-            Ver Mais Produtos
-          </a>
         </div>
       </div>
     </section>

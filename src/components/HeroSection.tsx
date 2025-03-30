@@ -9,18 +9,15 @@ const HeroSection = () => {
       <div className="relative container mx-auto h-full flex flex-col justify-center px-4 z-10">
         <div className="max-w-2xl animate-fade-in">
           <h1 className="text-5xl md:text-7xl font-bold mb-4 leading-tight">
-            URBAN <br />ESSENTIALS <br /><span className="text-4xl md:text-6xl font-light">COLLECTION 2023</span>
+            STORM <br />STREETWEAR <br /><span className="text-4xl md:text-6xl font-light">Wear the storm, own the style!</span>
           </h1>
           <p className="text-lg md:text-xl text-white/80 mb-8 max-w-lg">
-            Elevate your style with our exclusive streetwear pieces designed for the modern urban lifestyle.
+            Se destaque usando a Storm!
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <a href="#shop" className="button-primary flex items-center justify-center gap-2 group">
-              Shop Now 
+              Comprar agora 
               <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
-            </a>
-            <a href="#collections" className="button-outline">
-              View Collections
             </a>
           </div>
         </div>
