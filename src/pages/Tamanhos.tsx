@@ -34,7 +34,6 @@ const TamanhosPage = () => {
                 </div>
             </section>
 
-            <Footer />
         </div>
     );
 };
