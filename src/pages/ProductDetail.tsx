@@ -1,6 +1,5 @@
-
 import { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useLocation } from 'react-router-dom';
 import { ChevronLeft, Star, ShoppingCart, Heart } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -68,7 +67,7 @@ const products = [
     id: 6,
     name: 'Minimalist Backpack',
     price: 69.99,
-    image: 'https://images.unsplash.com/photo-1622560480605-d83c853bc5c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80',
+    image: 'https://images.unsplash.com/photo-1622560480605-d83c853bc5c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80',
     category: 'Accessories',
     isNew: true,
     description: 'A Minimalist Backpack é perfeita para o dia a dia urbano. Com design clean e funcional, oferece espaço suficiente para seus essenciais sem comprometer o estilo. Feita com materiais resistentes à água e compartimentos organizados para máxima praticidade.',
@@ -101,21 +100,28 @@ const products = [
 
 const ProductDetail = () => {
   const { id } = useParams();
-  const [product, setProduct] = useState<any>(null);
+  const location = useLocation();
+  const passedProduct = location.state?.product;
+  const [product, setProduct] = useState<any>(passedProduct || null);
   const [selectedSize, setSelectedSize] = useState('');
   const [selectedColor, setSelectedColor] = useState('');
   const [quantity, setQuantity] = useState(1);
   const [activeImage, setActiveImage] = useState(0);
 
   useEffect(() => {
-    // Em um cenário real, buscaríamos da API
-    const foundProduct = products.find(p => p.id === Number(id));
-    if (foundProduct) {
-      setProduct(foundProduct);
-      setSelectedSize(foundProduct.sizes[0]);
-      setSelectedColor(foundProduct.colors[0]);
+    // Se não temos o produto dos parâmetros de state, buscamos do array
+    if (!product) {
+      const foundProduct = products.find(p => p.id === Number(id));
+      if (foundProduct) {
+        setProduct(foundProduct);
+        setSelectedSize(foundProduct.sizes[0]);
+        setSelectedColor(foundProduct.colors[0]);
+      }
+    } else if (selectedSize === '' && product.sizes) {
+      setSelectedSize(product.sizes[0]);
+      setSelectedColor(product.colors[0]);
     }
-  }, [id]);
+  }, [id, product, selectedSize]);
 
   if (!product) {
     return <div className="min-h-screen flex items-center justify-center">Carregando...</div>;
@@ -125,7 +131,7 @@ const ProductDetail = () => {
   const additionalImages = [
     product.image,
     'https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80',
-    'https://images.unsplash.com/photo-1576566588028-4147f3842f27?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80',
+    'https://images.unsplash.com/photo-1576566588028-4147f3842f27?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80',
   ];
 
   const handleAddToCart = () => {

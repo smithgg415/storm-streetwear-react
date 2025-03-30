@@ -143,7 +143,7 @@ const ProductCatalog = () => {
         <div className="product-grid">
           {filteredProducts.map((product) => (
             <div key={product.id} className="product-card">
-              <Link to={`/product/${product.id}`} className="product-image-container">
+              <Link to={`/product/${product.id}`} state={{ product }} className="product-image-container">
                 <img
                   src={product.image}
                   alt={product.name}
@@ -159,7 +159,7 @@ const ProductCatalog = () => {
                 </div>
               </Link>
               <div className="p-4">
-                <Link to={`/product/${product.id}`}>
+                <Link to={`/product/${product.id}`} state={{ product }}>
                   <h3 className="text-lg font-medium">{product.name}</h3>
                   <div className="flex items-center justify-between mt-2">
                     <span className="text-lg font-semibold">${product.price}</span>
