@@ -1,77 +1,72 @@
 
 import { useState, useEffect } from 'react';
-import { Filter } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Filter, ShoppingBag } from 'lucide-react';
 
 // Mock product data
 const products = [
   {
     id: 1,
-    name: 'Urban Oversized Tee',
-    price: 49.99,
-    image: 'https://images.unsplash.com/photo-1566374010196-e78515e6a34a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80',
+    name: 'Camiseta Storm Graffit Orb',
+    price: 85.90,
+    image: '/img/graffitorb.png',
     category: 'T-Shirts',
     isNew: true,
+    link: 'https://lusfernandomachadorodrigue.mercadoshops.com.br/MLB-5325793538-camiseta-storm-graffit-orb-_JM',
+    tamanhos: ['G'],
   },
   {
     id: 2,
-    name: 'Street Culture Hoodie',
-    price: 89.99,
-    image: 'https://images.unsplash.com/photo-1620799140188-3b2a02fd9a77?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=772&q=80',
-    category: 'Hoodies',
-    isNew: false,
+    name: 'Camiseta Storm Graffit Three',
+    price: 85.90,
+    image: '/img/graffitthree.png',
+    category: 'T-Shirts',
+    isNew: true,
+    link: 'https://lusfernandomachadorodrigue.mercadoshops.com.br/MLB-5329174134-camiseta-storm-graffit-three-_JM',
+    tamanhos: ['M'],
   },
   {
     id: 3,
-    name: 'Cargo Pants Black',
-    price: 79.99,
-    image: 'https://images.unsplash.com/photo-1594042931706-a659fea5649e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=776&q=80',
-    category: 'Pants',
+    name: 'Camiseta Storm Graffit Three White',
+    price: 85.90,
+    image: '/img/graffitthreewhite.png',
+    category: 'T-Shirts',
     isNew: true,
+    link: 'https://lusfernandomachadorodrigue.mercadoshops.com.br/MLB-5329174134-camiseta-storm-graffit-three-_JM',
+    tamanhos: ['M'],
   },
   {
     id: 4,
-    name: 'Essential Cap',
-    price: 34.99,
-    image: 'https://images.unsplash.com/photo-1534215754734-18e55d13e346?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=804&q=80',
-    category: 'Accessories',
-    isNew: false,
+    name: 'Camiseta Storm Graffit Blast',
+    price: 85.90,
+    image: '/img/graffitblast.png',
+    category: 'T-Shirts',
+    isNew: true,
+    link: 'https://lusfernandomachadorodrigue.mercadoshops.com.br/MLB-5329313694-camiseta-storm-graffit-blast-_JM',
+    tamanhos: ['G'],
   },
   {
     id: 5,
-    name: 'Urban Bomber Jacket',
-    price: 129.99,
-    image: 'https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=736&q=80',
-    category: 'Jackets',
-    isNew: false,
+    name: 'Camiseta Storm Graffit Dash',
+    price: 85.90,
+    image: '/img/graffitdash.png',
+    category: 'T-Shirts',
+    isNew: true,
+    link: 'https://produto.mercadolivre.com.br/MLB-4013125147-camiseta-storm-graffit-dash-_JM',
+    tamanhos: ['GG'],
   },
   {
     id: 6,
-    name: 'Minimalist Backpack',
-    price: 69.99,
-    image: 'https://images.unsplash.com/photo-1622560480605-d83c853bc5c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80',
-    category: 'Accessories',
-    isNew: true,
-  },
-  {
-    id: 7,
-    name: 'Streetwear Sneakers',
-    price: 119.99,
-    image: 'https://images.unsplash.com/photo-1579338559194-a162d19bf842?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80',
-    category: 'Footwear',
-    isNew: false,
-  },
-  {
-    id: 8,
-    name: 'Graphic Print Tee',
-    price: 44.99,
-    image: 'https://images.unsplash.com/photo-1554568218-0f1715e72254?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80',
+    name: 'Camiseta Storm Graffit Dash White',
+    price: 85.90,
+    image: '/img/graffitdashwhite.png',
     category: 'T-Shirts',
-    isNew: false,
-  }
+    isNew: true,
+    link: 'https://produto.mercadolivre.com.br/MLB-4013125147-camiseta-storm-graffit-dash-_JM',
+    tamanhos: ['G'],
+  },
 ];
 
-const categories = ["All", "T-Shirts", "Hoodies", "Pants", "Jackets", "Footwear", "Accessories"];
+const categories = ["All", "T-Shirts"];
 
 const ProductCatalog = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -90,7 +85,7 @@ const ProductCatalog = () => {
     <section id="shop" className="bg-black py-24 px-4">
       <div className="container mx-auto">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-12">
-          <h2 className="catalog-heading">Shop Our Products</h2>
+          <h2 className="catalog-heading">Compre nossos produtos</h2>
           
           <div className="mt-6 md:mt-0">
             {/* Mobile filter button */}
@@ -143,7 +138,7 @@ const ProductCatalog = () => {
         <div className="product-grid">
           {filteredProducts.map((product) => (
             <div key={product.id} className="product-card">
-              <Link to={`/product/${product.id}`} state={{ product }} className="product-image-container">
+              <div className="product-image-container">
                 <img
                   src={product.image}
                   alt={product.name}
@@ -155,24 +150,36 @@ const ProductCatalog = () => {
                   </div>
                 )}
                 <div className="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <button className="button-primary w-full">Ver detalhes</button>
+                  <button 
+                    onClick={() => window.open(product.link, '_blank')}
+                    className="button-primary w-full flex items-center justify-center gap-2"
+                  >
+                    <ShoppingBag size={16} />
+                    Comprar
+                  </button>
                 </div>
-              </Link>
+              </div>
               <div className="p-4">
-                <Link to={`/product/${product.id}`} state={{ product }}>
-                  <h3 className="text-lg font-medium">{product.name}</h3>
-                  <div className="flex items-center justify-between mt-2">
-                    <span className="text-lg font-semibold">${product.price}</span>
-                    <span className="text-sm text-white/60">{product.category}</span>
-                  </div>
-                </Link>
+                <h3 className="text-lg font-medium">{product.name}</h3>
+                <div className="flex items-center justify-between mt-2">
+                  <span className="text-lg font-semibold">R${product.price.toFixed(2)}</span>
+                  <span className="text-sm text-white/60">Tamanho: {product.tamanhos.join(', ')}</span>
+                </div>
               </div>
             </div>
           ))}
         </div>
         
         <div className="mt-12 text-center">
-          <button className="button-outline">Load More Products</button>
+          <a 
+            href="https://lusfernandomachadorodrigue.mercadoshops.com.br" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="button-outline flex items-center justify-center gap-2 mx-auto w-fit"
+          >
+            <ShoppingBag size={18} />
+            Ver Mais Produtos
+          </a>
         </div>
       </div>
     </section>
