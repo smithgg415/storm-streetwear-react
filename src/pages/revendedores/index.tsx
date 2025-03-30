@@ -2,7 +2,7 @@ import Navbar from "@/components/NavBarRevendedores";
 import logo from "@/assets/img/logo_redondo.png";
 import Footer from "@/components/Footer";
 
-const Revendedor = () => {
+const Revendedores = () => {
     return (
         <div className="bg-gradient-to-b from-gray-900 via-black to-gray-900 text-white min-h-screen">
             <Navbar />
@@ -64,4 +64,4 @@ const Revendedor = () => {
     );
 }
 
-export default Revendedor;
+export default Revendedores;
