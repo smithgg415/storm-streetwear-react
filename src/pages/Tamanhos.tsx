@@ -1,4 +1,4 @@
-import Navbar from '../components/Navbar';
+import Navbar from '../components/NavBarPages';
 import Footer from '../components/Footer';
 import TabelaDeTamanhos from '../assets/img/tabela_tamanhos.png';
 
@@ -33,7 +33,7 @@ const TamanhosPage = () => {
                     </div>
                 </div>
             </section>
-
+            <Footer />
         </div>
     );
 };

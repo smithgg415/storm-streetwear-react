@@ -1,4 +1,4 @@
-import Navbar from "@/components/NavBarRevendedores";
+import Navbar from "@/components/NavBarPages";
 import logo from "@/assets/img/logo_redondo.png";
 import Footer from "@/components/Footer";
 
