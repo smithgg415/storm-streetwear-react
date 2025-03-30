@@ -33,12 +33,11 @@ const Navbar = () => {
           <Link to="/" className="nav-link uppercase text-sm tracking-wider">Home</Link>
         </nav>
 
-        <div className="hidden md:flex items-center space-x-6">
+        <div className="flex items-center space-x-6 mt-6">
           <button className="text-foreground/80 hover:text-foreground transition-colors">
             <p className="hidden md:block text-sm font-semibold">Acesse nosso instagram</p>
             <Instagram size={20} />
           </button>
-
         </div>
 
         <button className="md:hidden text-foreground" onClick={() => setIsMenuOpen(!isMenuOpen)}>
