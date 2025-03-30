@@ -28,7 +28,7 @@ const Qualidade = () => {
                     <div className="space-y-6 order-2 md:order-1">
                         <h3 className="text-2xl font-bold">Nossos Materiais</h3>
                         <p className="text-gray-400">
-                            Selecionamos materiais de alta qualidade para garantir conforto, durabilidade e estilo,
+                            Utilizamos uma malha peruana de alta qualidade, feita de algodão 100%, fio 40.1 e elastano, pronta para garantir conforto, durabilidade e estilo,
                             com tecidos resistentes e agradáveis ao toque, pensados para oferecer a melhor
                             experiência ao vestir.
                         </p>

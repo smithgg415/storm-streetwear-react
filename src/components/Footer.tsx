@@ -1,5 +1,6 @@
 import { Instagram, ListCheck } from 'lucide-react';
 import desenvolvedorLogo from '../assets/img/giacomellidevs.png';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -25,9 +26,9 @@ const Footer = () => {
             <h3 className="font-semibold text-lg mb-4">Revendedores</h3>
             <ul className="space-y-2">
               <li><a href="#" className="text-white/70 hover:text-white transition-colors">Revenda a Storm Streetwear na sua loja!</a></li>
-              <li><a href="/revendedores" className="text-white/70 hover:text-white transition-colors" style={{ textDecoration: "underline" }}>
+              <li><Link to="/revendedores" className="text-white/70 hover:text-white transition-colors" style={{ textDecoration: "underline" }}>
                 Seja um revendedor <ListCheck size={20} className="ml-1 inline" />
-              </a></li>
+              </Link></li>
             </ul>
           </div>
 

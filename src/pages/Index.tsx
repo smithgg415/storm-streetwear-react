@@ -9,6 +9,7 @@ import About from '@/components/About';
 import Items from '../components/Items';
 import Region from '@/components/Region';
 import Qualidade from '@/components/Qualidade';
+import Tamanhos from '@/pages/Tamanhos';
 
 const Index = () => {
   return (
@@ -21,6 +22,7 @@ const Index = () => {
       <Region />
       <Qualidade />
       <About />
+      <Tamanhos />
       {/* <Newsletter /> */}
       <Footer />
     </div>
