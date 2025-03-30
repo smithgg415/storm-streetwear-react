@@ -162,11 +162,11 @@ const ProductCatalog = () => {
               <div className="p-4">
                 <h3 className="text-lg font-medium">{product.name}</h3>
                 <div className="flex items-center justify-between mt-2">
-                  <span className="text-lg font-semibold">R${product.price}</span>
-                  <span className="text-sm text-white/60">Disponível no tamanho: {product.tamanhos}</span>
+                  {/* <span className="text-lg font-semibold">R${product.price}</span> */}
+                  {/* <span className="text-sm text-white/60">Disponível no tamanho: {product.tamanhos}</span> */}
                 </div>
-                <button className="button-primary mt-4 w-full flex items-center justify-center gap-2" onClick={() => window.open(product.link, '_blank')}>
-                  {/* <button className="button-primary mt-4 w-full flex items-center justify-center gap-2"> */}
+                {/* <button className="button-primary mt-4 w-full flex items-center justify-center gap-2" onClick={() => window.open(product.link, '_blank')}> */}
+                  <button className="button-primary mt-4 w-full flex items-center justify-center gap-2">
                   <ShoppingBag size={16} />
                   Vendas não liberadas ainda
                   <br />
