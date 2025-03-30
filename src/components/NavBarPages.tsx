@@ -51,8 +51,6 @@ const Navbar = () => {
           <nav className="flex flex-col space-y-4">
             <a href="../" className="text-foreground/80 hover:text-foreground transition-colors py-2 uppercase text-sm tracking-wider"
               onClick={() => setIsMenuOpen(false)}>Home</a>
-            <a href="#about" className="text-foreground/80 hover:text-foreground transition-colors py-2 uppercase text-sm tracking-wider"
-              onClick={() => setIsMenuOpen(false)}>Sobre nós</a>
           </nav>
           <div className="flex items-center space-x-6 mt-6">
             <button className="text-foreground/80 hover:text-foreground transition-colors">
