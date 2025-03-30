@@ -8,12 +8,11 @@ const Footer = () => {
     <footer className="bg-black py-16 px-4">
       <div className="container mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
-          {/* Primeira coluna */}
           <div>
             <a href="/" className="text-2xl font-bold tracking-tighter mb-6 inline-block">STORM STREET<span className="font-light">WEAR</span>
             </a>
             <p className="text-white/70 mt-4 max-w-xs">
-              Streetwear premium para quem aprecia design minimalista e estética urbana.
+              Streetwear premium para quem aprecia um design único e estética urbana.
             </p>
             <div className="flex space-x-4 mt-6">
               <a href="https://instagram.com/storm__streetwear" className="text-white/70 hover:text-white transition-colors">
@@ -22,7 +21,6 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Segunda coluna */}
           <div>
             <h3 className="font-semibold text-lg mb-4">Ajuda</h3>
             <ul className="space-y-2">
