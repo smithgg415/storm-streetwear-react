@@ -91,7 +91,13 @@ const ProductCatalog = () => {
     <section id="shop" className="bg-black py-24 px-4">
       <div className="container mx-auto">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-12">
-          <h2 className="catalog-heading">Compre nossos produtos</h2>
+          <h2 className="catalog-heading">Compre nossos produtos
+            <a href="/tamanhos"><p className="text-lg text-white/80 mb-4 md:mb-0 text-center md:text-left">
+                Tabela de tamanhos
+              </p>
+            </a>
+          </h2>
+
 
           <div className="mt-6 md:mt-0">
             <div className="md:hidden">
@@ -156,11 +162,11 @@ const ProductCatalog = () => {
               <div className="p-4">
                 <h3 className="text-lg font-medium">{product.name}</h3>
                 <div className="flex items-center justify-between mt-2">
-                  {/* <span className="text-lg font-semibold">R${product.price}</span> */}
-                  {/* <span className="text-sm text-white/60">Disponível no tamanho: {product.tamanhos}</span> */}
+                  <span className="text-lg font-semibold">R${product.price}</span>
+                  <span className="text-sm text-white/60">Disponível no tamanho: {product.tamanhos}</span>
                 </div>
-                {/* <button className="button-primary mt-4 w-full flex items-center justify-center gap-2" onClick={() => window.open(product.link, '_blank')}> */}
-                <button className="button-primary mt-4 w-full flex items-center justify-center gap-2">
+                <button className="button-primary mt-4 w-full flex items-center justify-center gap-2" onClick={() => window.open(product.link, '_blank')}>
+                  {/* <button className="button-primary mt-4 w-full flex items-center justify-center gap-2"> */}
                   <ShoppingBag size={16} />
                   Vendas não liberadas ainda
                   <br />

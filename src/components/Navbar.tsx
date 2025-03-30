@@ -35,7 +35,8 @@ const Navbar = () => {
         </nav>
 
         <div className="hidden md:flex items-center space-x-6">
-          <button className="text-foreground/80 hover:text-foreground transition-colors">
+          <button className="text-foreground/80 hover:text-foreground transition-colors flex items-center space-x-2">
+          <p className="hidden md:block text-sm font-semibold">Acesse nosso instagram</p>
             <Instagram size={20} />
           </button>
 

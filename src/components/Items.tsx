@@ -1,31 +1,29 @@
-import { FaCreditCard, FaGift, FaCheck } from 'react-icons/fa'; // Para os ícones
-import MercadoLivreLogo from '../assets/img/mercadolivre.png'; // Importando o logo do Mercado Livre
+import { FaCreditCard, FaGift, FaCheck } from 'react-icons/fa';
+import MercadoLivreLogo from '../assets/img/mercadolivre.png';
+import { Card, CardContent } from '@/components/ui/card';
 
 const Items = () => {
+  const items = [
+    { icon: <FaCreditCard className="text-4xl text-blue-500 mb-2" />, title: 'Pagamento seguro e controlado' },
+    { icon: <FaGift className="text-4xl text-yellow-500 mb-2" />, title: 'Brindes exclusivos da marca' },
+    { icon: <img src={MercadoLivreLogo} alt="Mercado Livre" width="80" className="mb-2" />, title: 'Compra garantida pelo Mercado Livre' },
+    { icon: <FaCreditCard className="text-4xl text-green-500 mb-2" />, title: 'Parcelamento em até 12x' },
+    { icon: <FaCheck className="text-4xl text-green-500 mb-2" />, title: 'Qualidade garantida' },
+  ];
+
   return (
     <div className="items py-12">
       <h2 className="text-2xl font-semibold text-center mb-6">Prezamos sua compra e sua satisfação!</h2>
-      <ul className="flex flex-wrap justify-center space-x-6">
-        <li className="flex items-center space-x-3">
-          <FaCreditCard className="text-xl" />
-          <h3 className="text-lg font-medium">Pagamento seguro e controlado</h3>
-        </li>
-        <li className="flex items-center space-x-3">
-          <FaGift className="text-xl" />
-          <h3 className="text-lg font-medium">Brindes exclusivos da marca</h3>
-        </li>
-        <li className="flex justify-center">
-          <img src={MercadoLivreLogo} alt="Mercado Livre" width="120" />
-        </li>
-        <li className="flex items-center space-x-3">
-          <FaCreditCard className="text-xl" />
-          <h3 className="text-lg font-medium">Parcelamento em até 12x</h3>
-        </li>
-        <li className="flex items-center space-x-3">
-          <FaCheck className="text-xl" />
-          <h3 className="text-lg font-medium">Qualidade garantida</h3>
-        </li>
-      </ul>
+      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6 justify-items-center">
+        {items.map((item, index) => (
+          <Card key={index} className="p-4 shadow-lg rounded-2xl hover:shadow-xl transition-shadow flex items-center justify-center">
+            <CardContent className="flex flex-col items-center text-center">
+              {item.icon}
+              <h3 className="text-lg font-medium mt-2">{item.title}</h3>
+            </CardContent>
+          </Card>
+        ))}
+      </div>
     </div>
   );
 };

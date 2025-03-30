@@ -8,6 +8,7 @@ import Footer from '../components/Footer';
 import About from '@/components/About';
 import Items from '../components/Items';
 import Region from '@/components/Region';
+import Qualidade from '@/components/Qualidade';
 
 const Index = () => {
   return (
@@ -15,9 +16,10 @@ const Index = () => {
       <Navbar />
       <HeroSection />
       <FeaturedCategories />
-      <Items />
       <ProductCatalog />
+      <Items />
       <Region />
+      <Qualidade />
       <About />
       {/* <Newsletter /> */}
       <Footer />

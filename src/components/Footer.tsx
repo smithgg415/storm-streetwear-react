@@ -1,4 +1,4 @@
-import { Instagram } from 'lucide-react';
+import { Instagram, ListCheck } from 'lucide-react';
 import desenvolvedorLogo from '../assets/img/giacomellidevs.png';
 
 const Footer = () => {
@@ -22,14 +22,15 @@ const Footer = () => {
           </div>
 
           <div>
-            <h3 className="font-semibold text-lg mb-4">Ajuda</h3>
+            <h3 className="font-semibold text-lg mb-4">Revendedores</h3>
             <ul className="space-y-2">
-              <li><a href="mailto:stormstree@gmail.com" className="text-white/70 hover:text-white transition-colors">Fale Conosco</a></li>
-
+              <li><a href="#" className="text-white/70 hover:text-white transition-colors">Revenda a Storm Streetwear na sua loja!</a></li>
+              <li><a href="/revendedores" className="text-white/70 hover:text-white transition-colors" style={{ textDecoration: "underline" }}>
+                Seja um revendedor <ListCheck size={20} className="ml-1 inline" />
+              </a></li>
             </ul>
           </div>
 
-          {/* Terceira coluna */}
           <div>
             <h3 className="font-semibold text-lg mb-4">Informações</h3>
             <ul className="space-y-2">
@@ -42,7 +43,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Quarta coluna - Desenvolvido por */}
           <div>
             <h3 className="font-semibold text-lg mb-4 text-center">Desenvolvido por:</h3>
             <img
