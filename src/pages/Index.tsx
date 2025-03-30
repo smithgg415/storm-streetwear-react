@@ -22,8 +22,6 @@ const Index = () => {
       <Region />
       <Qualidade />
       <About />
-      <Tamanhos />
-      {/* <Newsletter /> */}
       <Footer />
     </div>
   );
