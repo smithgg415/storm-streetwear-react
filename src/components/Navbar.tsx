@@ -32,6 +32,7 @@ const Navbar = () => {
           <a href="#" className="nav-link uppercase text-sm tracking-wider">Home</a>
           <a href="#shop" className="nav-link uppercase text-sm tracking-wider">Produtos</a>
           <a href="#about" className="nav-link uppercase text-sm tracking-wider">Sobre nós</a>
+          <a href='/revendedores' className="nav-link uppercase text-sm tracking-wider">Revendedores</a>
         </nav>
 
         <div className="hidden md:flex items-center space-x-6">
