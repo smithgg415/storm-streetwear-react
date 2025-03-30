@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, ShoppingCart, User, Search, Instagram } from 'lucide-react';
 import Logo from '../assets/img/logo.png';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -29,7 +30,7 @@ const Navbar = () => {
         <a href="https://stormstreetwear.store" className="text-2xl font-bold tracking-tighter">STORM STREET<span className="font-light">WEAR</span></a>
 
         <nav className="hidden md:flex items-center space-x-6">
-          <a href="/" className="nav-link uppercase text-sm tracking-wider">Home</a>
+          <Link to="/" className="nav-link uppercase text-sm tracking-wider">Home</Link>
         </nav>
 
         <div className="hidden md:flex items-center space-x-6">

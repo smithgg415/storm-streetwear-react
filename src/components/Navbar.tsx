@@ -1,5 +1,6 @@
 
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { Menu, X, ShoppingCart, User, Search, Instagram } from 'lucide-react';
 import Logo from '../assets/img/logo.png';
 
@@ -29,7 +30,7 @@ const Navbar = () => {
         <a href="https://stormstreetwear.store" className="text-2xl font-bold tracking-tighter">STORM STREET<span className="font-light">WEAR</span></a>
 
         <nav className="hidden md:flex items-center space-x-6">
-          <a href="#" className="nav-link uppercase text-sm tracking-wider">Home</a>
+          <Link to="/" className="nav-link uppercase text-sm tracking-wider">Home</Link>
           <a href="#shop" className="nav-link uppercase text-sm tracking-wider">Produtos</a>
           <a href="#about" className="nav-link uppercase text-sm tracking-wider">Sobre nós</a>
         </nav>
