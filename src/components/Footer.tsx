@@ -10,8 +10,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
           {/* Primeira coluna */}
           <div>
-            <a href="/" className="text-2xl font-bold tracking-tighter mb-6 inline-block">
-              STREET<span className="font-light">WEAR</span>
+            <a href="/" className="text-2xl font-bold tracking-tighter mb-6 inline-block">STORM STREET<span className="font-light">WEAR</span>
             </a>
             <p className="text-white/70 mt-4 max-w-xs">
               Streetwear premium para quem aprecia design minimalista e estética urbana.
