@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Filter, ListIcon, ShoppingBag } from 'lucide-react';
 import GraffitOrb from '../assets/img/graffitorb.png';
@@ -19,6 +18,7 @@ const products = [
     isNew: true,
     link: 'https://lusfernandomachadorodrigue.mercadoshops.com.br/MLB-5325793538-camiseta-storm-graffit-orb-_JM',
     tamanhos: ['G'],
+    estoque: 1,
   },
   {
     id: 2,
@@ -29,6 +29,7 @@ const products = [
     isNew: true,
     link: 'https://lusfernandomachadorodrigue.mercadoshops.com.br/MLB-5329174134-camiseta-storm-graffit-three-_JM',
     tamanhos: ['M'],
+    estoque: 1,
   },
   {
     id: 3,
@@ -39,6 +40,7 @@ const products = [
     isNew: true,
     link: 'https://lusfernandomachadorodrigue.mercadoshops.com.br/MLB-5329174134-camiseta-storm-graffit-three-_JM',
     tamanhos: ['M'],
+    estoque: 1,
   },
   {
     id: 4,
@@ -49,6 +51,7 @@ const products = [
     isNew: true,
     link: 'https://lusfernandomachadorodrigue.mercadoshops.com.br/MLB-5329313694-camiseta-storm-graffit-blast-_JM',
     tamanhos: ['G'],
+    estoque: 1,
   },
   {
     id: 5,
@@ -59,8 +62,8 @@ const products = [
     isNew: true,
     link: 'https://produto.mercadolivre.com.br/MLB-4013125147-camiseta-storm-graffit-dash-_JM',
     tamanhos: ['GG'],
+    estoque: 1,
   },
-
   {
     id: 6,
     name: 'Camiseta Storm Graffit Dash White',
@@ -70,6 +73,7 @@ const products = [
     isNew: true,
     link: 'https://produto.mercadolivre.com.br/MLB-4013125147-camiseta-storm-graffit-dash-_JM',
     tamanhos: ['G'],
+    estoque: 1,
   },
 ];
 
@@ -155,6 +159,9 @@ const ProductCatalog = () => {
                   alt={product.name}
                   className="product-image"
                 />
+                <p className="absolute top-2 left-2 bg-white text-black text-xs font-medium px-2 py-1">
+                  Malha Peruana
+                </p>
                 {product.isNew && (
                   <div className="absolute top-4 right-4 bg-white text-black text-xs font-medium px-2 py-1">
                     NEW
@@ -163,23 +170,35 @@ const ProductCatalog = () => {
               </div>
               <div className="p-4">
                 <h3 className="text-lg font-medium">{product.name}</h3>
-                <div className="flex items-center justify-between mt-2">
-                  {/* <span className="text-lg font-semibold">R${product.price}</span> */}
-                  {/* <span className="text-sm text-white/60">Disponível no tamanho: {product.tamanhos}</span> */}
-                </div>
-                {/* <button className="button-primary mt-4 w-full flex items-center justify-center gap-2" onClick={() => window.open(product.link, '_blank')}> */}
-                <button className="button-primary mt-4 w-full flex items-center justify-center gap-2">
-                  <ShoppingBag size={16} />
-                  Vendas não liberadas ainda
-                  <br />
-                  Aguarde até 04/04
-                </button>
+                {/* {product.estoque === 0 ? (
+                  <div>
+                    <p className="text-red-500 text-sm">Produto fora de estoque</p>
+                    <a href='#shop' className="text-white/80 hover:text-white">
+                      <button className="button-primary mt-4 w-full flex items-center justify-center gap-2">
+                        <ShoppingBag size={16} />
+                        Veja outras camisetas
+                      </button>
+                    </a>
+                  </div> */}
+                {/* ) : ( */}
+                  <div>
+                    <div className="flex items-center justify-between mt-2">
+                      {/* <span className="text-lg font-semibold">R${product.price}</span> */}
+                      {/* <span className="text-sm text-white/60">Disponível no tamanho: {product.tamanhos.join(', ')}</span> */}
+                    </div>
+                    {/* <button className="button-primary mt-4 w-full flex items-center justify-center gap-2" onClick={() => window.open(product.link, '_blank')}> */}
+                    <button className="button-primary mt-4 w-full flex items-center justify-center gap-2">
+                      <ShoppingBag size={16} />
+                      Vendas não liberadas
+                    </button>
+                  </div>
+                {/* )} */}
               </div>
             </div>
           ))}
         </div>
       </div>
-    </section>
+    </section >
   );
 };
 

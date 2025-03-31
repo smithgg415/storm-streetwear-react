@@ -16,9 +16,9 @@ const Index = () => {
       <Navbar />
       <HeroSection />
       <FeaturedCategories />
+      <Region />
       <ProductCatalog />
       <Items />
-      <Region />
       <Qualidade />
       <About />
       <Footer />
