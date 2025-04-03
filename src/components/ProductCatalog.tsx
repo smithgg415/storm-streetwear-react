@@ -50,7 +50,7 @@ const products = [
     category: 'T-Shirts',
     isNew: true,
     link: 'https://lusfernandomachadorodrigue.mercadoshops.com.br/MLB-5329313694-camiseta-storm-graffit-blast-_JM',
-    tamanhos: ['G'],
+    tamanhos: ['GG'],
     estoque: 1,
   },
   {
@@ -61,7 +61,7 @@ const products = [
     category: 'T-Shirts',
     isNew: true,
     link: 'https://produto.mercadolivre.com.br/MLB-4013125147-camiseta-storm-graffit-dash-_JM',
-    tamanhos: ['GG'],
+    tamanhos: ['G'],
     estoque: 1,
   },
   {
