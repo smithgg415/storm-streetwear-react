@@ -9,7 +9,7 @@ const HeroSection = () => {
       <div className="relative container mx-auto h-full flex flex-col justify-center px-4 z-10">
         <div className="max-w-2xl animate-fade-in">
           <h1 className="text-5xl md:text-7xl font-bold mb-4 leading-tight">
-            STORM <br />STREETWEAR <br /><span className="text-4xl md:text-6xl font-light">Aproveite a pré-venda no dia 03/04</span>
+            STORM <br />STREETWEAR <br /><span className="text-4xl md:text-6xl font-light">A Coleção Storm Graffit já está ON</span>
           </h1>
           <p className="text-lg md:text-xl text-white/80 mb-8 max-w-lg">
             Se destaque usando a Storm!
