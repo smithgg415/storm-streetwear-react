@@ -12,7 +12,7 @@ const products = [
   {
     id: 1,
     name: 'Camiseta Storm Graffit Orb',
-    price: 85.90,
+    price: 79.90,
     image: GraffitOrb,
     category: 'T-Shirts',
     isNew: true,
@@ -23,7 +23,7 @@ const products = [
   {
     id: 2,
     name: 'Camiseta Storm Graffit Three',
-    price: 85.90,
+    price: 79.90,
     image: GraffitThree,
     category: 'T-Shirts',
     isNew: true,
@@ -45,7 +45,7 @@ const products = [
   {
     id: 4,
     name: 'Camiseta Storm Graffit Blast',
-    price: 85.90,
+    price: 79.90,
     image: GraffitBlast,
     category: 'T-Shirts',
     isNew: true,
@@ -56,7 +56,7 @@ const products = [
   {
     id: 5,
     name: 'Camiseta Storm Graffit Dash',
-    price: 85.90,
+    price: 79.90,
     image: GraffitDash,
     category: 'T-Shirts',
     isNew: true,
@@ -67,7 +67,7 @@ const products = [
   {
     id: 6,
     name: 'Camiseta Storm Graffit Dash White',
-    price: 85.90,
+    price: 79.90,
     image: GraffitBlastWhite,
     category: 'T-Shirts',
     isNew: true,
