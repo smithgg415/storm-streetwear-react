@@ -72,7 +72,7 @@ const products = [
     category: 'T-Shirts',
     isNew: true,
     link: 'https://produto.mercadolivre.com.br/MLB-4013125147-camiseta-storm-graffit-dash-_JM',
-    tamanhos: ['G'],
+    tamanhos: ['M'],
     estoque: 1,
   },
 ];
