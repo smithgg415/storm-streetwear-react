@@ -12,18 +12,18 @@ const products = [
   {
     id: 1,
     name: 'Camiseta Storm Graffit Orb',
-    price: 79.90,
+    price: 70.90,
     image: GraffitOrb,
     category: 'T-Shirts',
     isNew: true,
-    link: 'https://lusfernandomachadorodrigue.mercadoshops.com.br/MLB-5325793538-camiseta-storm-graffit-orb-_JM',
+    link: 'https://lusfernandomachadorodrigue.mercadoshops.com.br/MLB-5325703938-camiseta-storm-graffit-orb-_JM',
     tamanhos: ['G'],
-    estoque: 1,
+    estoque: 0,
   },
   {
     id: 2,
     name: 'Camiseta Storm Graffit Three',
-    price: 79.90,
+    price: 70.90,
     image: GraffitThree,
     category: 'T-Shirts',
     isNew: true,
@@ -34,7 +34,7 @@ const products = [
   {
     id: 3,
     name: 'Camiseta Storm Graffit Three White',
-    price: 85.90,
+    price: 70.90,
     image: GraffitThreeWhite,
     category: 'T-Shirts',
     isNew: true,
@@ -45,7 +45,7 @@ const products = [
   {
     id: 4,
     name: 'Camiseta Storm Graffit Blast',
-    price: 79.90,
+    price: 70.90,
     image: GraffitBlast,
     category: 'T-Shirts',
     isNew: true,
@@ -56,7 +56,7 @@ const products = [
   {
     id: 5,
     name: 'Camiseta Storm Graffit Dash',
-    price: 79.90,
+    price: 70.90,
     image: GraffitDash,
     category: 'T-Shirts',
     isNew: true,
@@ -67,7 +67,7 @@ const products = [
   {
     id: 6,
     name: 'Camiseta Storm Graffit Dash White',
-    price: 79.90,
+    price: 70.90,
     image: GraffitBlastWhite,
     category: 'T-Shirts',
     isNew: true,
