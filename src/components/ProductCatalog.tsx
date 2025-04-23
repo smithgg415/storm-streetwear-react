@@ -45,7 +45,7 @@ const products = [
   {
     id: 4,
     name: 'Camiseta Storm Graffit Blast',
-    price: 70.90,
+    price: 79.90,
     image: GraffitBlast,
     category: 'T-Shirts',
     isNew: true,
